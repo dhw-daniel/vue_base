@@ -40,7 +40,7 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios
 ```
 git clone https://github.com/dhw-daniel/vue_base.git  
 
-cd vue2-elm
+cd vue_base
 
 npm install  或 yarn(推荐)
 
