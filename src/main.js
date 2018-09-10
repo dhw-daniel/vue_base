@@ -31,7 +31,7 @@ axios.defaults.baseURL = configs.requestHost
 // 设置axios全局默认请求超时时间
 axios.defaults.timeout = 2000
 // 设置axios全局默认存在跨域请求消除OPTIONS请求
-axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
 // axios全局默认post请求数据格式为键值对方式
 axios.defaults.transformRequest = function (data) {
   data = Qs.stringify(data)
