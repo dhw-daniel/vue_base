@@ -7,6 +7,7 @@ import store from './store'
 import fastClick from 'fastclick'
 import md5 from 'js-md5'
 import axios from 'axios'
+import Qs from 'qs'
 // 公共参数配置
 import configs from './common/Configs'
 // 请求接口列表
@@ -30,9 +31,12 @@ axios.defaults.baseURL = configs.requestHost
 // 设置axios全局默认请求超时时间
 axios.defaults.timeout = 2000
 // 设置axios全局默认存在跨域请求消除OPTIONS请求
-//axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-// 设置axios全局默认post请求参数以键值对传送
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+// axios全局默认post请求数据格式为键值对方式
+axios.defaults.transformRequest = function (data) {
+  data = Qs.stringify(data)
+  return data
+}
 // axios请求
 Vue.prototype.$axios = axios
 /* eslint-disable no-new */
