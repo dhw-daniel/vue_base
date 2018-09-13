@@ -8,6 +8,7 @@ import fastClick from 'fastclick'
 import md5 from 'js-md5'
 import axios from 'axios'
 import Qs from 'qs'
+import infiniteScroll from 'vue-infinite-scroll'
 // 公共参数配置
 import configs from './common/Configs'
 // 请求接口列表
@@ -15,7 +16,8 @@ import requestApi from './common/RequestApi'
 // 公共函数
 import functions from './common/Functions'
 Vue.config.productionTip = false
-
+// 使用无限加载组件
+Vue.use(infiniteScroll)
 // 消除部分手机300延时不准确
 fastClick.attach(document.body)
 // MD5加密
