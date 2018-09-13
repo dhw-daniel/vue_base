@@ -17,13 +17,15 @@ export default {
   },
   methods: {
     getTestInfo: function () {
-      var params = this.$functions.mergeBaseParams()
+      // var params = this.$functions.mergeBaseParams()
+      var obj = {page: this.page, times: this.times, days: this.days, keyword: this.keyword}
+      var params = this.$functions.mergeBaseParams(obj)
       this.$axios.post(this.$requestApi.getMerchantConInfo.path, params)
-        .then(function (response) {
-          console.log(response)
+        .then((res) => {
+          console.log(res)
         })
-        .catch(function (error) {
-          console.log(error)
+        .catch((err) => {
+          console.log(err)
         })
     }
   },
